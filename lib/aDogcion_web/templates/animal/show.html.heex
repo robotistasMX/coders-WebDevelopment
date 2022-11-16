@@ -1,0 +1,48 @@
+<h1>Show Animal</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @animal.name %>
+  </li>
+
+  <li>
+    <strong>Species:</strong>
+    <%= @animal.species %>
+  </li>
+
+  <li>
+    <strong>Breed:</strong>
+    <%= @animal.breed %>
+  </li>
+
+  <li>
+    <strong>Size:</strong>
+    <%= @animal.size %>
+  </li>
+
+  <li>
+    <strong>Age:</strong>
+    <%= @animal.age %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @animal.description %>
+  </li>
+
+  <li>
+    <strong>Special needs:</strong>
+    <%= @animal.special_needs %>
+  </li>
+
+  <li>
+    <strong>Health information:</strong>
+    <%= @animal.health_information %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.animal_path(@conn, :edit, @animal) %></span> |
+<span><%= link "Back", to: Routes.animal_path(@conn, :index) %></span>

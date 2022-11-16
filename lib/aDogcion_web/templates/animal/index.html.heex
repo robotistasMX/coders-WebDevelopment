@@ -1,0 +1,40 @@
+<h1>Listing Animals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Species</th>
+      <th>Breed</th>
+      <th>Size</th>
+      <th>Age</th>
+      <th>Description</th>
+      <th>Special needs</th>
+      <th>Health information</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for animal <- @animals do %>
+    <tr>
+      <td><%= animal.name %></td>
+      <td><%= animal.species %></td>
+      <td><%= animal.breed %></td>
+      <td><%= animal.size %></td>
+      <td><%= animal.age %></td>
+      <td><%= animal.description %></td>
+      <td><%= animal.special_needs %></td>
+      <td><%= animal.health_information %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.animal_path(@conn, :show, animal) %></span>
+        <span><%= link "Edit", to: Routes.animal_path(@conn, :edit, animal) %></span>
+        <span><%= link "Delete", to: Routes.animal_path(@conn, :delete, animal), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Animal", to: Routes.animal_path(@conn, :new) %></span>

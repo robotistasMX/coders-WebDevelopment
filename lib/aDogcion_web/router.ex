@@ -19,7 +19,7 @@ defmodule ADogcionWeb.Router do
 
   scope "/", ADogcionWeb do
     pipe_through :browser
-
+    resources "/animals", AnimalController
     get "/", PageController, :index
   end
 
