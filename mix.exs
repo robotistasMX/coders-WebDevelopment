@@ -33,6 +33,7 @@ defmodule ADogcion.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:bcrypt_elixir, "~> 3.0"},
       {:phoenix, "~> 1.6.11"},
       {:phoenix_ecto, "~> 4.4"},
@@ -61,6 +62,7 @@ defmodule ADogcion.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"],
       setup: ["deps.get", "ecto.setup"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],

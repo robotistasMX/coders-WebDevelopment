@@ -26,6 +26,7 @@ config :aDogcion, ADogcionWeb.Endpoint,
   secret_key_base: "K6ycJt/yhR3lET68SSZV6OGIlHC4+wP2zJTceAmm3E+mQOCY31OqM9TL4mfFbwwW",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
 
@@ -73,3 +74,6 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :aDogcion,
+  uploads_directory: "/root/workspace/imagenes"
